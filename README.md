@@ -62,6 +62,32 @@ PyYAML
 einops
 ```
 
+## Data Preparation
+
+The dataset should follow the structure below:
+Dataset/
+├── Real_Data/
+│ ├── label_1280.npy # Ground-truth clean MCG signals
+│ └── noise_1280.npy # Corresponding noisy MCG signals
+└── Simulated_Data/
+├── label_1280.npy # Simulated clean MCG signals
+└── noise_1280.npy # Simulated noisy MCG signals
+
+
+Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
+- `N` is the number of signal samples.
+- Each row represents a single MCG signal of length 1280.
+
+> ⚠️ **Note:** The dataset files are currently not publicly available.  
+> To run this project with your own data, please prepare your MCG signals and save them in the same format and file names as shown above.
+
+### Guidelines:
+- Ensure `label_1280.npy` and `noise_1280.npy` are aligned (i.e., `label[i]` is the clean version of `noise[i]`).
+- Place real-world recordings under `Real_Data/` and simulated signals under `Simulated_Data/`.
+- Preprocessing, normalization, and train/val/test splitting are handled in:
+  - `Data_Preparation/data_preparation.py`
+  - `Data_Preparation/data_loader.py`
+
 
 ## Configuration
 
