@@ -43,7 +43,7 @@ A PyTorch-based pipeline for magnetocardiography (MCG) signal denoising using a 
 
 ## Prerequisites
 
-* Python 3.8+
+* Python
 * PyTorch
 * scikit-learn
 * matplotlib
