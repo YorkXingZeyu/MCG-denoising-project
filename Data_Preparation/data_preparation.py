@@ -25,8 +25,8 @@ def Data_Prepar_1():
 
 def Data_Prepar_2():
     """Load & preprocess the SIMULATED MCG data; return full X, y arrays."""
-    noisy = np_load('Dataset/Simulated_Data/noise_1280_channel3.npy', allow_pickle=True)
-    clean = np_load('Dataset/Simulated_Data/label_1280.npy',    allow_pickle=True)
+    noisy = np_load('Dataset/Simulated_Data/noise_1280.npy', allow_pickle=True)
+    clean = np_load('Dataset/Simulated_Data/label_1280.npy', allow_pickle=True)
 
     noisy = noisy / 200
     clean = clean / 200
