@@ -82,7 +82,6 @@ All data preparation lives in `Data_Preparation/`:
 
 Place your datasets under:
 
-```
 Dataset/Real_Data/    # noise_1280.npy, label_1280.npy
 Dataset/Simulated_Data/ # noise_1280_channel3.npy, label_1280.npy
 ```
