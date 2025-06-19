@@ -1,0 +1,23 @@
+# Related parameter design
+seed: 42
+device: cuda:0
+
+# MCG_real_result; MCG_simulated_result;
+output_folder: MCG_simulated_result
+
+train:
+  batch_size: 32
+  lr: 0.0006
+  epochs: 1000
+  step_size: 1000
+  gamma: 0
+  early_stopping: 10
+  weight_decay: 0 
+  unetloss_print_weight: 10
+  train_model: True
+  
+test:
+  batch_size: 10
+  evaluate_model: True
+
+
