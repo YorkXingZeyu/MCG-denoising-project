@@ -8,7 +8,7 @@ A PyTorch-based pipeline for magnetocardiography (MCG) signal denoising using a 
 * [Prerequisites](#prerequisites)
 * [Requirements](#Requirements)
 * [Data Preparation](#data-preparation)
-  * [Guidelines for Using Customer Data](#Guidelines-for-Using-Customer-Data)
+  * [Guidelines](#Guidelines)
   * [Data preparation module](#Data-preparation-module)
 * [Configuration](#configuration)
 * [Usage](#usage)
@@ -84,7 +84,7 @@ Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
 > ⚠️ **Note:** The dataset files are currently not publicly available.  
 > To run this project with your own data, please prepare your MCG signals and save them in the same format and file names as shown above.
 
-### Guidelines for Using Customer Data:
+### Guidelines:
 - Ensure `label_1280.npy` and `noise_1280.npy` are aligned (i.e., `label[i]` is the clean version of `noise[i]`).
 - Place real-world recordings under `Real_Data/` and simulated signals under `Simulated_Data/`.
 - Preprocessing, normalization, and train/val/test splitting are handled in:
