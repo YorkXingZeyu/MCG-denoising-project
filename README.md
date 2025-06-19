@@ -96,16 +96,24 @@ This script provides preprocessing functions for:
 - Real MCG data (stored using pickle format in .npy files)
 - Simulated MCG data (stored using standard NumPy .npy format)
 
-⚠️ IMPORTANT:
-If you are replacing the dataset with your own:
-- For `Real_Data`, make sure files are saved via `pickle.dump()` and loaded via `pickle.load()`
-- For `Simulated_Data`, make sure files are saved via `np.save()` and loaded via `np.load()`
+Each .npy file is expected to be a NumPy array of shape [N, 1280], where:
+- N is the number of signal samples
+- Each row represents a single MCG signal of length 1280
 
-Each function returns:
-    X: noisy signal, shape (N, T, 1)
-    y: clean signal, shape (N, T, 1)
-Both are normalized and zero-centered (if real).
+⚠️ IMPORTANT: Signal normalization by dividing by 200 is applied in both preprocessing functions.
+This assumes the original signal amplitudes are roughly in the range [-200, 200].
 
+If you are using your own dataset:
+- Check the dynamic range of your signals.
+- You may need to change or remove the `/ 200` normalization step depending on your data scale.
+
+Other processing includes:
+- For real data: zero-centering each sample after normalization
+- For simulated data: removing outlier samples with extreme mismatch
+
+Output format:
+- X: noisy signal, shape (N, 1280, 1)
+- y: clean signal, shape (N, 1280, 1)
 
 
 ## Configuration
