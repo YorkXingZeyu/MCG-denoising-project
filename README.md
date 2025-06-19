@@ -70,10 +70,10 @@ The dataset should follow the structure below:
  ```txt
  Dataset/
  ├── Real_Data/
- │   ├── label_1280.npy     # Ground-truth clean MCG signals
- │   └── noise_1280.npy     # Corresponding noisy MCG signals
+ │   ├── label_1280.npy     # Clean MCG signals
+ │   └── noise_1280.npy     # Real noisy MCG signals
  └── Simulated_Data/
-     ├── label_1280.npy     # Simulated clean MCG signals
+     ├── label_1280.npy     # Clean MCG signals
      └── noise_1280.npy     # Simulated noisy MCG signals
 ```
 
