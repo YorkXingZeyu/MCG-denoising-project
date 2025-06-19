@@ -89,8 +89,8 @@ Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
 - Preprocessing, normalization, and train/val/test splitting are handled in:
   - `Data_Preparation/data_preparation.py`
   - `Data_Preparation/data_loader.py`
-"""
-Data preparation module for MCG signal denoising.
+
+### Data preparation module for MCG signal denoising.
 
 This script provides preprocessing functions for:
 - Real MCG data (stored using pickle format in .npy files)
@@ -105,7 +105,6 @@ Each function returns:
     X: noisy signal, shape (N, T, 1)
     y: clean signal, shape (N, T, 1)
 Both are normalized and zero-centered (if real).
-"""
 
 
 
