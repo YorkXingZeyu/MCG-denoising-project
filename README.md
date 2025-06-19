@@ -74,7 +74,7 @@ The dataset should follow the structure below:
  └── Simulated_Data/
      ├── label_1280.npy     # Simulated clean MCG signals
      └── noise_1280.npy     # Simulated noisy MCG signals
-
+```
 
 Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
 - `N` is the number of signal samples.
@@ -89,7 +89,7 @@ Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
 - Preprocessing, normalization, and train/val/test splitting are handled in:
   - `Data_Preparation/data_preparation.py`
   - `Data_Preparation/data_loader.py`
-```
+
 
 ## Configuration
 
