@@ -78,7 +78,7 @@ git clone https://github.com/YorkXingZeyu/MCG-denoising-project.git
 All data preparation lives in `Data_Preparation/`:
 
 * data\_preparation.py: Loads raw `.npy` files, applies normalization, centering, and (optional) outlier filtering.
-* data\_loader.py: Converts to PyTorch tensors, permutes to `(batch, channel, length)`, and splits into 70% train / 10% validation / 20% test.
+* data\_loader.py: Converts to PyTorch tensors, permutes to `(batch, channel, length)`.
 
 Place your datasets under:
 
