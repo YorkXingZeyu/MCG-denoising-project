@@ -7,6 +7,7 @@ A PyTorch-based pipeline for magnetocardiography (MCG) signal denoising using a 
 * [Project Structure](#project-structure)
 * [Prerequisites](#prerequisites)
 * [Requirements](#Requirements)
+* [Dataset](#Dataset)
 * [Data Preparation](#data-preparation)
 * [Configuration](#configuration)
 * [Usage](#usage)
@@ -61,6 +62,16 @@ torch
 PyYAML
 einops
 ```
+
+## Dataset
+
+This repository uses [Git LFS](https://git-lfs.github.com/) to manage large `.npy` dataset files.  
+Before cloning, make sure to install Git LFS:
+
+```bash
+git lfs install
+git clone https://github.com/YorkXingZeyu/MCG-denoising-project.git
+
 
 ## Data Preparation
 
