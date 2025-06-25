@@ -94,8 +94,8 @@ Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
 ### Data preparation module:
 
 This script provides preprocessing functions for:
-- Real MCG data (stored using pickle format in .npy files)
-- Simulated MCG data (stored using standard NumPy .npy format)
+- Real MCG data 
+- Simulated MCG data 
 
 Each .npy file is expected to be a NumPy array of shape [N, 1280], where:
 - N is the number of signal samples
@@ -109,8 +109,8 @@ If you are using your own dataset:
 - You may need to change or remove the `/ 200` normalization step depending on your data scale.
 
 Other processing includes:
-- For real data: zero-centering each sample after normalization
-- For simulated data: removing outlier samples with extreme mismatch
+- zero-centering each sample after normalization
+- removing outlier samples with extreme mismatch
 
 Output format:
 - X: noisy signal, shape (N, 1280, 1)
@@ -128,7 +128,7 @@ output_folder: MCG_simulated_result  # MCG_real_result or MCG_simulated_result
 
 train:
   batch_size: 32
-  lr: 0.0006
+  lr: 0.0001
   epochs: 1000
   step_size: 1000
   gamma: 0
