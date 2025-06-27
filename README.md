@@ -99,9 +99,7 @@ Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
   (i.e., `label[i]` is the clean version of `noise[i]`).
 * Place real-world recordings under `Real_Data/` and simulated signals under `Simulated_Data/`.
 * File format requirements:
-
-  * **Real Data** (`Real_Data/`): saved with `pickle.dump()` → loaded with `pickle.load()`.
-  * **Simulated Data** (`Simulated_Data/`): saved with `np.save()` → loaded with `np.load(allow_pickle=True)`.
+  * **Real Data and Simulated Data** (`Simulated_Data/`): saved with `np.save()` → loaded with `np.load(allow_pickle=True)`.
 * All files must be NumPy arrays of shape `[N, 1280]`.
 * Preprocessing, normalization, and train/val/test splitting are handled in:
 
