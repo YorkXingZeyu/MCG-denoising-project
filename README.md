@@ -110,7 +110,7 @@ Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
 
 ---
 
-### 2. Data-preparation-module
+### 2. Data preparation module
 
 This module provides preprocessing logic for MCG signal denoising:
 
