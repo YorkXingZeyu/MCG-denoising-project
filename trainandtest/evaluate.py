@@ -14,7 +14,7 @@ def evaluate_fold(unet, data_loader, config, fold=None):
     else:
         weight_file = os.path.join(model_folder, "Unet1D_best.pth")
     if not os.path.exists(weight_file):
-        raise FileNotFoundError(f"权重文件不存在: {weight_file}")
+        raise FileNotFoundError(f"Weight file does not exist: {weight_file}")
     unet.load_state_dict(torch.load(weight_file, map_location=device, weights_only=True))
     unet.to(device)
     unet.eval()
