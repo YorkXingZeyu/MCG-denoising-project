@@ -129,7 +129,7 @@ output_folder: MCG_simulated_result  # MCG_real_result or MCG_simulated_result
 train:
   batch_size: 32
   lr: 0.0001
-  epochs: 1000
+  epochs: 200
   step_size: 1000
   gamma: 0
   early_stopping: 10
