@@ -69,7 +69,6 @@ einops
 
 ## Data Preparation
 
-⚠️ data will release soon
 
 The dataset should follow the structure below:
 
@@ -114,7 +113,7 @@ This module provides preprocessing logic for MCG signal denoising:
 
 * **Normalization**
   All signals are divided by **200**, assuming the original amplitude range is roughly `[-200, 200]`.
-  ⚠️ If you use your own dataset, verify whether this normalization is appropriate.
+  > ⚠️ If you use your own dataset, verify whether this normalization is appropriate.
   You may adjust or remove the `/ 200` step based on your signal’s dynamic range.
 
   1. Loaded via `np.load(..., allow_pickle=True)`.
