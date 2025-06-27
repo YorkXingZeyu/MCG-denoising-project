@@ -45,10 +45,10 @@ def prepare_data(config):
         shuffle=True
     )
 
-    # 2) of the 80% remaining, allocate 12.5% to validation
+    # 2) 70% for train and 10% for val
     train_idx, val_idx = train_test_split(
         train_val_idx,
-        test_size=0.125,  # 0.125 * 0.80 = 0.10 of total
+        test_size=0.125, 
         random_state=42,
         shuffle=True
     )
