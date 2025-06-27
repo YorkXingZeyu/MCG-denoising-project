@@ -65,56 +65,7 @@ einops
 
 ## Data Preparation
 
-The dataset should follow the structure below:
-
- ```txt
- Dataset/
- ├── Real_Data/
- │   ├── label_1280.npy     # Clean MCG signals
- │   └── noise_1280.npy     # Real noisy MCG signals
- └── Simulated_Data/
-     ├── label_1280.npy     # Clean MCG signals
-     └── noise_1280.npy     # Simulated noisy MCG signals
-```
-
-Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
-- `N` is the number of signal samples.
-- Each row represents a single MCG signal of length 1280.
-
-> ⚠️ **Note:** The dataset files are currently not publicly available.  
-> To run this project with your own data, please prepare your MCG signals and save them in the same format and file names as shown above.
-
-### Guidelines:
-- Ensure `label_1280.npy` and `noise_1280.npy` are aligned (i.e., `label[i]` is the clean version of `noise[i]`).
-- Place real-world recordings under `Real_Data/` and simulated signals under `Simulated_Data/`.
-- Preprocessing, normalization, and train/val/test splitting are handled in:
-  - `Data_Preparation/data_preparation.py`
-  - `Data_Preparation/data_loader.py`
-
-### Data preparation module:
-
-This script provides preprocessing functions for:
-- Real MCG data 
-- Simulated MCG data 
-
-Each .npy file is expected to be a NumPy array of shape [N, 1280], where:
-- N is the number of signal samples
-- Each row represents a single MCG signal of length 1280
-
-⚠️ IMPORTANT: Signal normalization by dividing by 200 is applied in both preprocessing functions.
-This assumes the original signal amplitudes are roughly in the range [-200, 200].
-
-If you are using your own dataset:
-- Check the dynamic range of your signals.
-- You may need to change or remove the `/ 200` normalization step depending on your data scale.
-
-Other processing includes:
-- zero-centering each sample after normalization
-- removing outlier samples with extreme mismatch
-
-Output format:
-- X: noisy signal, shape (N, 1280, 1)
-- y: clean signal, shape (N, 1280, 1)
+data will release soon
 
 
 ## Configuration
