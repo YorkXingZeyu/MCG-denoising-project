@@ -5,8 +5,8 @@ from numpy import load as np_load
 
 def Data_Prepar_1():
     """Load & preprocess the SIMULATED MCG data; return full X, y arrays."""
-    noisy = np_load('Dataset/Real_Data/perfect_noise.npy', allow_pickle=True)
-    clean = np_load('Dataset/Real_Data/perfect_label.npy', allow_pickle=True)
+    noisy = np_load('Dataset/Real_Data/noise.npy', allow_pickle=True)
+    clean = np_load('Dataset/Real_Data/label.npy', allow_pickle=True)
 
     noisy = noisy / 200
     clean = clean / 200
@@ -29,8 +29,8 @@ def Data_Prepar_1():
 
 def Data_Prepar_2():
     """Load & preprocess the SIMULATED MCG data; return full X, y arrays."""
-    noisy = np_load('Dataset/Simulated_Data/perfect_noise.npy', allow_pickle=True)
-    clean = np_load('Dataset/Simulated_Data/label_1280.npy', allow_pickle=True)
+    noisy = np_load('Dataset/Simulated_Data/noise.npy', allow_pickle=True)
+    clean = np_load('Dataset/Simulated_Data/1280.npy', allow_pickle=True)
 
     noisy = noisy / 200
     clean = clean / 200
