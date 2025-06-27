@@ -71,8 +71,6 @@ einops
 
 ⚠️ data will release soon
 
-## Data Preparation
-
 The dataset should follow the structure below:
 
 ```txt
