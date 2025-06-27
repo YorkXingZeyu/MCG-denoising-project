@@ -119,7 +119,6 @@ This module provides preprocessing logic for MCG signal denoising:
   3. Signals normalized (`/ 200`), then **filter out** samples
 
   > ⚠️ If you use your own dataset, verify whether this normalization is appropriate.
-  > You may adjust or remove the `/ 200` step based on your signal’s dynamic range.
 
 * **Output Format**
 
