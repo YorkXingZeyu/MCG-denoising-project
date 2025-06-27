@@ -87,7 +87,7 @@ Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
 * `N` is the number of signal samples.
 * Each row represents a single MCG signal of length 1280.
 
-> ⚠️ **Note:** The dataset files are currently not publicly available.
+> ⚠️ **Note:** The data will release soon and the dataset files are currently not publicly available.
 > To run this project with your own data, please prepare your signals and save them in the same format and file names as shown above.
 
 ---
