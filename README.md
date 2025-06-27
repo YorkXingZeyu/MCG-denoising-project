@@ -92,7 +92,7 @@ Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
 
 ---
 
-### 1. Guidelines
+### Guidelines
 
 * Ensure that `label.npy` and `noise.npy` are **aligned**
   (i.e., `label[i]` is the clean version of `noise[i]`).
@@ -107,7 +107,7 @@ Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
 
 ---
 
-### 2. Data preparation module
+### Data preparation module
 
 This module provides preprocessing logic for MCG signal denoising:
 
