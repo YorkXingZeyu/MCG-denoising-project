@@ -95,11 +95,11 @@ Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
 
 ### 1. Guidelines
 
-* Ensure that `label_1280.npy` and `noise_1280.npy` are **aligned**
+* Ensure that `label.npy` and `noise.npy` are **aligned**
   (i.e., `label[i]` is the clean version of `noise[i]`).
 * Place real-world recordings under `Real_Data/` and simulated signals under `Simulated_Data/`.
 * File format requirements:
-  * **Real Data and Simulated Data** (`Simulated_Data/`): saved with `np.save()` → loaded with `np.load(allow_pickle=True)`.
+  * **Real Data and Simulated Data** saved with `np.save()` → loaded with `np.load(allow_pickle=True)`.
 * All files must be NumPy arrays of shape `[N, 1280]`.
 * Preprocessing, normalization, and train/val/test splitting are handled in:
 
