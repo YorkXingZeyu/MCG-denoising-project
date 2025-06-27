@@ -95,7 +95,7 @@ Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
 
 ---
 
-### 1. Guidelines for Using Your Own Data
+### 1. Guidelines
 
 * Ensure that `label_1280.npy` and `noise_1280.npy` are **aligned**
   (i.e., `label[i]` is the clean version of `noise[i]`).
@@ -112,7 +112,7 @@ Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
 
 ---
 
-### 2. Data Preprocessing Details
+### 2. Data-preparation-module
 
 This module provides preprocessing logic for MCG signal denoising:
 
@@ -121,16 +121,10 @@ This module provides preprocessing logic for MCG signal denoising:
   ⚠️ If you use your own dataset, verify whether this normalization is appropriate.
   You may adjust or remove the `/ 200` step based on your signal’s dynamic range.
 
-* **Real Data** (`Real_Data/`)
-
-  1. Loaded via `pickle.load()`.
-  2. Signals normalized (`/ 200`), then **zero-centered** per sample.
-
-* **Simulated Data** (`Simulated_Data/`)
-
   1. Loaded via `np.load(..., allow_pickle=True)`.
-  2. Signals normalized (`/ 200`), then **filter out** samples
-     where `max|noisy – clean| ≥ 0.525`.
+  2. zero-centered** per sample.
+  3. Signals normalized (`/ 200`), then **filter out** samples
+  
 
 * **Output Format**
 
