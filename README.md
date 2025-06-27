@@ -71,19 +71,72 @@ einops
 
 ⚠️ data will release soon
 
-Each .npy file is expected to be a NumPy array of shape [N, 1280], where:
+## Data Preparation
 
-N is the number of signal samples.
-Each row represents a single MCG signal of length 1280.
-⚠️ Note: The dataset files are currently not publicly available.
-To run this project with your own data, please prepare your MCG signals and save them in the same format and file names as shown above.
+The dataset should follow the structure below:
 
-## Guidelines:
-Ensure label_1280.npy and noise_1280.npy are aligned (i.e., label[i] is the clean version of noise[i]).
-Place real-world recordings under Real_Data/ and simulated signals under Simulated_Data/.
-Preprocessing, normalization, and train/val/test splitting are handled in:
-Data_Preparation/data_preparation.py
-Data_Preparation/data_loader.py
+```txt
+Dataset/
+├── Real_Data/
+│   ├── label_1280.npy     # Ground-truth clean MCG signals
+│   └── noise_1280.npy     # Corresponding noisy MCG signals
+└── Simulated_Data/
+    ├── label_1280.npy     # Simulated clean MCG signals
+    └── noise_1280.npy     # Simulated noisy MCG signals
+```
+
+Each `.npy` file is expected to be a NumPy array of shape `[N, 1280]`, where:
+
+* `N` is the number of signal samples.
+* Each row represents a single MCG signal of length 1280.
+
+> ⚠️ **Note:** The dataset files are currently not publicly available.
+> To run this project with your own data, please prepare your MCG signals and save them in the same format and file names as shown above.
+
+---
+
+### 1. Guidelines for Using Your Own Data
+
+* Ensure that `label_1280.npy` and `noise_1280.npy` are **aligned**
+  (i.e., `label[i]` is the clean version of `noise[i]`).
+* Place real-world recordings under `Real_Data/` and simulated signals under `Simulated_Data/`.
+* File format requirements:
+
+  * **Real Data** (`Real_Data/`): saved with `pickle.dump()` → loaded with `pickle.load()`.
+  * **Simulated Data** (`Simulated_Data/`): saved with `np.save()` → loaded with `np.load(allow_pickle=True)`.
+* All files must be NumPy arrays of shape `[N, 1280]`.
+* Preprocessing, normalization, and train/val/test splitting are handled in:
+
+  * `Data_Preparation/data_preparation.py`
+  * `Data_Preparation/data_loader.py`
+
+---
+
+### 2. Data Preprocessing Details
+
+This module provides preprocessing logic for MCG signal denoising:
+
+* **Normalization**
+  All signals are divided by **200**, assuming the original amplitude range is roughly `[-200, 200]`.
+  ⚠️ If you use your own dataset, verify whether this normalization is appropriate.
+  You may adjust or remove the `/ 200` step based on your signal’s dynamic range.
+
+* **Real Data** (`Real_Data/`)
+
+  1. Loaded via `pickle.load()`.
+  2. Signals normalized (`/ 200`), then **zero-centered** per sample.
+
+* **Simulated Data** (`Simulated_Data/`)
+
+  1. Loaded via `np.load(..., allow_pickle=True)`.
+  2. Signals normalized (`/ 200`), then **filter out** samples
+     where `max|noisy – clean| ≥ 0.525`.
+
+* **Output Format**
+
+  * `X`: noisy signals, shape **(N, 1280, 1)**
+  * `y`: clean signals, shape **(N, 1280, 1)**
+
 
 
 ## Configuration
