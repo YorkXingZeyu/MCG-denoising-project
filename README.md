@@ -24,11 +24,11 @@ A PyTorch-based pipeline for magnetocardiography (MCG) signal denoising using a 
 │   └── base.yaml            # Default configuration parameters
 ├── Dataset/
 │   ├── Real_Data/           # Real MCG .npy files
-│   ├── label_1280.npy     # Ground-truth clean MCG signals
-│   └── noise_1280.npy     # Corresponding noisy MCG signals
+│       ├── label_1280.npy     # Ground-truth clean MCG signals
+│       └── noise_1280.npy     # Corresponding noisy MCG signals
 │   └── Simulated_Data/      # Simulated MCG .npy files
-     ├── label_1280.npy     # Simulated clean MCG signals
-     └── noise_1280.npy     # Simulated noisy MCG signals
+        ├── label_1280.npy     # Simulated clean MCG signals
+        └── noise_1280.npy     # Simulated noisy MCG signals
 ├── Data_Preparation/
 │   ├── data_preparation.py  # Data loading & preprocessing
 │   └── data_loader.py       # Splitting & DataLoader creation
