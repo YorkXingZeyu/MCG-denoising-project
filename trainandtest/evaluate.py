@@ -1,7 +1,7 @@
 import os
 import torch
 import pandas as pd
-from utils.metrics import SSD, MAD, PRD, COS_SIM, SNR, SNR_improvement
+from utils.metrics import SSD, MAD, COS_SIM, SNR
 
 def evaluate_fold(unet, data_loader, config, fold=None):
 
